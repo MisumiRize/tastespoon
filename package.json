@@ -1,0 +1,23 @@
+{
+  "name": "tastespoon",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -m commonjs -t ES5 --outDir lib src/index.ts src/mocha.ts",
+    "test": "mocha --compilers ts:espower-typescript/guess test"
+  },
+  "author": "Rize MISUMI",
+  "license": "MIT",
+  "devDependencies": {
+    "espower-typescript": "^0.1.0",
+    "mocha": "^2.2.5",
+    "power-assert": "^0.11.0",
+    "typescript": "^1.4.1"
+  },
+  "dependencies": {
+    "es6-promise": "^2.1.1",
+    "ip": "^0.3.2",
+    "request": "^2.55.0"
+  }
+}
