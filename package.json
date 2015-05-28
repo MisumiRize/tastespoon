@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc -m commonjs -t ES5 --outDir lib src/index.ts src/mocha.ts",
-    "test": "mocha --compilers ts:espower-typescript/guess test"
+    "test": "mocha --compilers ts:espower-typescript/guess test/*.test.ts"
   },
   "author": "Rize MISUMI",
   "license": "MIT",
