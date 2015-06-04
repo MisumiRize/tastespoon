@@ -4,16 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "prepublish": "dtsm install && tsc -m commonjs -t ES5 --outDir lib src/index.ts src/mocha.ts",
+    "prepublish": "tsd reinstall && tsd rebundle && tsc -m commonjs -t ES5 --outDir lib src/index.ts src/mocha.ts",
     "test:integration": "mocha --compilers ts:espower-typescript/guess test/integration/*.test.ts"
   },
   "author": "Rize MISUMI",
   "license": "MIT",
   "devDependencies": {
-    "dtsm": "^0.10.3",
     "espower-typescript": "^0.1.0",
     "mocha": "^2.2.5",
     "power-assert": "^0.11.0",
+    "tsd": "^0.6.1",
     "typescript": "^1.4.1"
   },
   "dependencies": {

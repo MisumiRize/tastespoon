@@ -1,4 +1,4 @@
-/// <reference path="../typings/bundle.d.ts" />
+/// <reference path="../typings/tsd.d.ts" />
 
 import Resource = require("./resource");
 import Context = require("./context");
