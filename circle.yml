@@ -1,0 +1,16 @@
+machine:
+  node:
+    version: iojs-v1.3.0
+  services:
+    - docker
+
+dependencies:
+  pre:
+    - docker pull nginx:latest
+    - npm install
+
+test:
+  pre:
+    - docker run -d -p 8000:80 nginx
+  override:
+    - npm run test:integration

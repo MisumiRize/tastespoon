@@ -50,7 +50,11 @@ export class HttpContext extends Context {
                         Host: url.hostname
                     }
                 }, function(err, res, body) {
-                resolve(res);
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(res);
+                }
             });
         });
     }
