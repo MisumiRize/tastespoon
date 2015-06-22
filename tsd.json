@@ -11,9 +11,6 @@
     "es6-promise/es6-promise.d.ts": {
       "commit": "c50b111ded0a3a18b87b5abffea3150d6aca94da"
     },
-    "ip/ip.d.ts": {
-      "commit": "c50b111ded0a3a18b87b5abffea3150d6aca94da"
-    },
     "request/request.d.ts": {
       "commit": "c50b111ded0a3a18b87b5abffea3150d6aca94da"
     },

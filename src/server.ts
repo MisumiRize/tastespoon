@@ -1,7 +1,6 @@
 /// <reference path="../typings/tsd.d.ts" />
 
 import Resource = require("./resource");
-import IP = require("ip");
 
 var servers: { [key: string]: Server } = {};
 
@@ -23,17 +22,12 @@ class Server extends Resource {
 
     constructor(public name: string, address: string) {
         super();
-        this.address = determineAddress(address);
+        this.address = address;
     }
 
     toString(): string {
         return `server '${this.name}'`;
     }
-}
-
-function determineAddress(address: string): string {
-    IP.toBuffer(address);
-    return address;
 }
 
 export = Server;
