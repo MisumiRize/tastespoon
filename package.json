@@ -1,13 +1,23 @@
 {
   "name": "tastespoon",
   "version": "0.1.0",
-  "description": "",
+  "description": "Infrastructure behavior testing framework",
   "main": "index.js",
+  "files": [
+    "lib",
+    "index.js",
+    "mocha.js",
+    "tastespoon.d.ts"
+  ],
   "scripts": {
     "prepublish": "tsd reinstall && tsd rebundle && tsc -m commonjs -t ES5 --outDir lib src/index.ts src/mocha.ts",
     "test:integration": "mocha --compilers ts:espower-typescript/guess test/integration/*.test.ts"
   },
   "author": "Rize MISUMI",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MisumiRize/tastespoon"
+  },
   "license": "MIT",
   "devDependencies": {
     "espower-typescript": "^0.1.0",
