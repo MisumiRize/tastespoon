@@ -5,6 +5,8 @@ machine:
     - docker
 
 dependencies:
+  cache_directories:
+    - ~/.tsd-cache
   pre:
     - docker pull nginx:latest
     - npm install
