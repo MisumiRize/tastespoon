@@ -1,23 +1,21 @@
 declare module "tastespoon" {
-    export import Resource = require("tastespoon/resource");
-    export import Context = require("tastespoon/context");
-    import Server = require("tastespoon/server");
-    import Http = require("./http");
-    export declare var define: typeof Server.define;
-    export declare var server: typeof Server.findServerByName;
-    export declare var http: (string: any, HttpOption: any) => (Server: any) => Http.HttpContext;
+    export import Resource = require("tastespoon/lib/resource");
+    export import Context = require("tastespoon/lib/context");
+    import Server = require("tastespoon/lib/server");
+    export var define: typeof Server.define;
+    export var server: typeof Server.findServerByName;
 }
 
-declare module "tastespoon/resource" {
+declare module "tastespoon/lib/resource" {
     class Resource {
         toString(): string;
     }
     export = Resource;
 }
 
-declare module "tastespoon/context" {
-    import Server = require("tastespoon/server");
-    import Resource = require("tastespoon/resource");
+declare module "tastespoon/lib/context" {
+    import Server = require("tastespoon/lib/server");
+    import Resource = require("tastespoon/lib/resource");
     class Context {
         server: Server;
         resource: Resource;
@@ -26,9 +24,9 @@ declare module "tastespoon/context" {
     export = Context;
 }
 
-declare module "tastespoon/server" {
-    import Resource = require("tastespoon/resource");
-    declare class Server extends Resource {
+declare module "tastespoon/lib/server" {
+    import Resource = require("tastespoon/lib/resource");
+    class Server extends Resource {
         static define(name: string, address: string): void;
         static findServerByName(name: string): Server;
         name: string;
